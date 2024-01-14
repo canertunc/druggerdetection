@@ -71,7 +71,7 @@
   
       <div class="person">
         <div>
-          <img class="person-img" src="" alt="">
+          <img class="person-img" src="../assets/emirhan.jpg" alt="">
         </div>
   
         <div class="team">
@@ -88,6 +88,12 @@
   
     </div>
   
+    <footer class="footer">
+
+<div>
+  <h5>Drugger Detection © 2023-2024</h5>
+</div>
+</footer>
     
   </template>
   

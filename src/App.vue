@@ -1,6 +1,7 @@
 <template>
 
-  <div id="nav" class="nav-bar" :class="{ scrolled: isScrolled }" v-if="$store.state.user">
+  <div id="nav" class="nav-bar" :class="{ scrolled: isScrolled }">
+  <!-- <div id="nav" class="nav-bar" :class="{ scrolled: isScrolled }" v-if="$store.state.user"> -->
 
 <div class="head">
   <div>
@@ -15,8 +16,11 @@
   <router-link class="page" to="/projectabout">Application Guide</router-link>
   <router-link class="page" to="/about">About</router-link>
   <router-link class="page" to="/contact">Contact</router-link>
-  <router-link class="page" to="/user">User</router-link>
-  <button id="logoutbut" class="page" @click="$store.dispatch('logout')">Logout</button>
+  <!-- <router-link class="page" to="/user">User</router-link> -->
+  <router-link class="page" to="/user" v-if="$store.state.user">User</router-link>
+  <button v-if="$store.state.user" id="logoutbut" class="page" @click="$store.dispatch('logout')">Logout</button>
+  <button v-if="!$store.state.user" id="logoutbut2" class="page"><router-link class="login-button" to = "/login">Login</router-link></button>
+
 
 </div>
 
@@ -97,6 +101,19 @@ export default {
 </script>
 
 <style>
+
+.login-button {
+  text-decoration: none;  
+  color: #ffff;
+  width: 100px;
+}
+#logoutbut2{
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(75, 173, 75);
+  color: #ffff;
+}
 #logoutbut{
   border: 0;
   border-radius: 5px;

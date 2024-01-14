@@ -15,6 +15,14 @@
     </div>
     </div>
 
+    
+  <footer class="footer">
+
+<div>
+  <h5>Drugger Detection © 2023-2024</h5>
+</div>
+</footer>
+
 </template>
 
 <style>

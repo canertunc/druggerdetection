@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/HomeView.vue'
 import Login from '../views/LoginView.vue'
 import { auth } from '../firebase'
@@ -9,7 +9,7 @@ const routes = [
     name: 'home',
     component: Home,
     meta: {
-      requiresAuth: true
+      requiresAuth: false
     }
   },
   {
@@ -19,7 +19,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
     meta: {
-      requiresAuth: true
+      requiresAuth: false
     }
   },
   {
@@ -30,7 +30,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/ContactView.vue'),
     meta: {
-      requiresAuth: true
+      requiresAuth: false
     }
   },
   {
@@ -41,7 +41,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/ProjectAboutView.vue'),
     meta: {
-      requiresAuth: true
+      requiresAuth: false
     }
   },
   // {
@@ -72,7 +72,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes
 })
 
