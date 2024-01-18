@@ -122,9 +122,10 @@ export default createStore({
           const date = userData.date;
           const job = userData.job;
           const country = userData.country;
+          const address = userData.address;
 
           // Kullanıcı adını Vuex store'a ekleyebilirsiniz
-          commit('SET_USER', { ...user, name, surname, gender,date,job,country });
+          commit('SET_USER', { ...user, name, surname, gender,date,job,country,address });
         } else {
           console.error('Kullanıcı belgesi bulunamadı.');
         }
@@ -197,7 +198,7 @@ export default createStore({
     // ...
     
     async register({ commit }, details) {
-      const { email, password, name, surname,gender,date, job,country } = details;
+      const { email, password, name, surname,gender,date, job,country,address } = details;
     
       try {
         // Yeni kullanıcıyı oluştur
@@ -220,11 +221,12 @@ export default createStore({
           gender:gender,
           country : country,
           date : date,
+          address : address,
           // Diğer kullanıcı bilgilerini buraya ekleyebilirsiniz
         });
     
         // Kullanıcı bilgilerini güncelle ve yönlendirme işlemini gerçekleştir
-        commit('SET_USER', { uid, email, name, surname,gender,date, job,country });
+        commit('SET_USER', { uid, email, name, surname,gender,date, job,country,address });
     
         router.push('/');
       } catch (error) {

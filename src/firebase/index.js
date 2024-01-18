@@ -49,7 +49,7 @@ const firestore = getFirestore(app);
 const storage = getStorage(app);
 
 // Kullanıcı bilgilerini Firestore'a kaydet
-async function saveUserInfoToFirestore(uid, name, surname,gender,date,job,country) {
+async function saveUserInfoToFirestore(uid, name, surname,gender,date,job,country,address) {
   const userCollection = collection(firestore, "users");
   const userDocRef = doc(userCollection, uid);
 
@@ -60,6 +60,7 @@ async function saveUserInfoToFirestore(uid, name, surname,gender,date,job,countr
     date : date,
     job: job,
     country : country,
+    address : address,
     
     // Diğer kullanıcı bilgilerini buraya ekleyebilirsiniz
   });

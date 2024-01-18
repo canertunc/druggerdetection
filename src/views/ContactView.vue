@@ -76,6 +76,9 @@
     .container {
         max-width: 300px;
     }
+    .contact-info p {
+        font-size: 11px;
+    }
 
 
 

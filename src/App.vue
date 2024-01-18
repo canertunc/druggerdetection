@@ -39,6 +39,18 @@
     </div>
     <div> <router-link class="page3" to="/contact">Contact</router-link>
     </div>
+
+    <div>
+      <router-link class="page3" to="/user" v-if="$store.state.user">User</router-link>
+    </div>
+
+    <div  v-if="$store.state.user">
+      <button v-if="$store.state.user" id="logoutbut" class="page3 page3-btn" @click="$store.dispatch('logout')">Logout</button>
+    </div>
+
+    <div v-if="!$store.state.user">
+      <button v-if="!$store.state.user" id="logoutbut2" class="page3 page3-btn"><router-link class="login-button" to = "/login">Login</router-link></button>
+    </div>
   </div>
 
 </div>
@@ -133,14 +145,14 @@ export default {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 18px;
+  gap: 8px;
   margin-top: 20px;
   margin-bottom: 12px;
 }
 
 .page3 {
   text-decoration: none;
-  color: #00BFFF;
+  color: rgb(255, 98, 0);
   transition: 0.5s;
   font-size: 14px;
 }
@@ -154,8 +166,8 @@ export default {
   display: none;
   cursor: pointer;
   margin-right: 95px;
-  margin-left: 70px;
-  margin-top: 10px;
+  margin-left: 65px;
+  margin-top: 20px;
 }
 
 
@@ -168,6 +180,7 @@ export default {
   margin: 6px 0;
   transition: 0.4s;
   margin-left: 14px;
+  
 }
 
 /* Rotate first bar */
@@ -338,11 +351,17 @@ p {
 
   .res-menu {
     display: block;
+    margin-right: 1500px;
   }
 
   .nav-bar {
     width: auto;
 
+  }
+  #start {
+    font-size: 30px;
+    
+    
   }
 
 }</style>

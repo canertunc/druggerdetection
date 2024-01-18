@@ -161,13 +161,12 @@
       margin-left: 50px;
       width: 330px;
       margin-top: 70px;
-      margin-bottom: 100px;
-  
+      
   }
   
     .about-first img {
-      width: 90px;
-      height: 150px;
+      width: 100px;
+      height: 120px;
       margin-top: 250px;
     }
   

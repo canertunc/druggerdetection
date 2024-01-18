@@ -124,9 +124,13 @@
         height: 228px;
 
     }
+    .project-about {
+        margin-top: 0px;
+    }
 
-
-
+    .project-about-mains {
+        margin-top: 270px;
+    }
 
 
     }

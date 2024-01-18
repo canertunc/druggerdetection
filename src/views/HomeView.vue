@@ -84,6 +84,7 @@
       padding-top: 40px;
       height: 800px;
       margin-left: 120px;
+      
       /* background-image: url(../assets/bck.jpg);
       background-size: 100%; */
 
@@ -208,6 +209,7 @@
   
     .home {
       margin-left: 40px;
+      margin-top: 40px;
     }
     .header-image img {
     width: 270px;
@@ -235,6 +237,10 @@
   .header {
       display: flex;
       flex-direction: column;
+  }
+  #drugger2 {
+    width: 250px;
+    margin-left: 40px;
   }
   
   
