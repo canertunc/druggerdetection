@@ -21,23 +21,23 @@
         </div>
 
         <div class="profile-item">
-          <label for="name">Name:</label>
+          <label class="changeable2-label2" for="name">Name:</label>
           <span id="name">{{ username }}</span>
         </div>
         <div class="profile-item">
-          <label for="surname">Surname:</label>
+          <label class="changeable2-label2" for="surname">Surname:</label>
           <span id="surname">{{ usersurname }}</span>
         </div>
         <div class="profile-item">
-          <label for="gender">Gender:</label>
+          <label class="changeable2-label2" for="gender">Gender:</label>
           <span id="gender">{{ usergender }}</span>
         </div>
         <div class="profile-item">
-          <label for="date">Date of Birth:</label>
+          <label class="changeable2-label2" for="date">Date of Birth:</label>
           <span id="date">{{ userdate }}</span>
         </div>
         <div class="profile-item">
-          <label for="job">Job:</label>
+          <label class="changeable2-label2" for="job">Job:</label>
           <span id="job">{{ userjob }}</span>
         </div>
         <button class="edit" @click="isEdit = !isEdit">edit</button>
@@ -53,17 +53,17 @@
         </div>
 
         <div class="profile-item">
-          <label for="name">Name:</label>
-          <input type="name" :placeholder="username" :value="username" v-model="username" />
+          <label for="name" class="changeable2-label2 changeable2-label3">Name:</label>
+          <input class="changeable2-label" type="name" :placeholder="username" :value="username" v-model="username" />
 
         </div>
         <div class="profile-item">
-          <label for="surname">Surname:</label>
-          <input type="surname" :placeholder="usersurname" :value="usersurname" v-model="usersurname" />
+          <label class="changeable2-label2 changeable2-label3" for="surname">Surname:</label>
+          <input class="changeable2-label" type="surname" :placeholder="usersurname" :value="usersurname" v-model="usersurname" />
         </div>
         <div class="profile-item">
-          <label for="gender">Gender:</label>
-          <select v-model="usergender" id="gender" name="gender" :value="usergender">
+          <label class="changeable2-label2 changeable2-label3" for="gender">Gender:</label>
+          <select class="changeable2-label" v-model="usergender" id="gender" name="gender" :value="usergender">
             <option :value="null" disabled>Select gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -71,12 +71,12 @@
           </select>
         </div>
         <div class="profile-item">
-          <label for="date">Date of Birth:</label>
-          <input type="date" :placeholder="userdate" :value="userdate" v-model="userdate" />
+          <label class="changeable2-label2 changeable2-label3" for="date">Date of Birth:</label>
+          <input class="changeable2-label" type="date" :placeholder="userdate" :value="userdate" v-model="userdate" />
         </div>
         <div class="profile-item">
-          <label for="job">Job:</label>
-          <input type="job" :placeholder="userjob" :value="userjob" v-model="userjob" />
+          <label class="changeable2-label2 changeable2-label3" for="job">Job:</label>
+          <input class="changeable2-label" type="job" :placeholder="userjob" :value="userjob" v-model="userjob" />
         </div>
 
         <button class="save" @click="updateUserInfo()">save</button>
@@ -97,13 +97,13 @@
         </div>
 
         <div class="profile-item address-item">
-          <label for="country">Country:</label>
+          <label class="changeable2-label2" for="country">Country:</label>
           <span id="country">{{ usercountry }}</span>
         </div>
 
         <div class="profile-item address-item">
           <div> 
-            <label for="address">Address:</label>
+            <label class="changeable2-label2" for="address">Address:</label>
           </div>
 
 
@@ -125,11 +125,11 @@
         </div>
 
         <div class="profile-item address-item">
-          <label for="country">Country:</label>
+          <label class="changeable2-label2 changeable2-label3" for="country">Country:</label>
 
           <!-- <input type="country" :placeholder="usercountry" :value="usercountry" v-model="usercountry" /> -->
 
-          <select v-model="usercountry" id="country" name="country" class="input-widt" :value="usercountry">
+          <select  v-model="usercountry" id="country" name="country" class="input-widt changeable2-label" :value="usercountry">
             <option :value="null" disabled>Select country</option>
             <option value="Turkey">Turkey</option>
             <option value="U.S. Virgin Islands">U.S. Virgin Islands</option>
@@ -379,8 +379,8 @@
         </div>
 
         <div class="profile-item address-item">
-          <label for="address">Address:</label>
-          <textarea name="address" id="address" cols="30" rows="10" :placeholder="address" :value="useraddress" v-model="useraddress" ></textarea>
+          <label class = "changeable2-label2 changeable2-label3" for="address">Address:</label>
+          <textarea class = "changeable2-label" name="address" id="address" cols="30" rows="10" :placeholder="address" :value="useraddress" v-model="useraddress" ></textarea>
           <!-- <input type="address" :placeholder="address" :value="useraddress" v-model="useraddress" /> -->
         </div>
 
@@ -399,16 +399,16 @@
         </div>
 
         <div class="profile-item">
-          <label for="email">Email:</label>
+          <label class="changeable2-label2" for="email">Email:</label>
           <span id="email">{{ useremail }}</span>
         </div>
         <div class="profile-item">
-          <label for="password">Password:</label>
+          <label class="changeable2-label2" for="password">Password:</label>
           <span id="password">********</span>
           <button class="change-password-user" @click="ForgotPassword()">Change password</button>
         </div>
         <div class="profile-item">
-          <label for="verification">verification:</label>
+          <label class="changeable2-label2" for="verification">verification:</label>
           <span id="verification" v-if="verfy">verified</span>
           <span id="verification" v-if="!verfy">not verified</span>
 
@@ -1095,15 +1095,17 @@ export default {
 
 
 
-.changeable2 input,select,textarea {
+.changeable2-label {
   background-color: rgb(255, 255, 255);
   /*rgb(255, 245, 238) */
   border: 3px solid rgb(0, 0, 0);
+  
 }
 
-.changeable2 label {
-  margin-right: 10px
+.changeable2-label3 {
+  margin-right: 10px;
 }
+
 
 
 
@@ -1191,7 +1193,7 @@ export default {
   margin-top: 10px;
 }
 
-label {
+.changeable2-label2 {
   font-weight: bold;
 }
 

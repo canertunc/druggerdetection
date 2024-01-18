@@ -55,7 +55,7 @@
 
 					<div class="inf-divin">
 						<div>
-							<label for="gender">Gender:</label>
+							<label for="gender" class="gender-label">Gender:</label>
 						</div>
 
 						<div>
@@ -447,7 +447,7 @@ export default {
 						date: "1999-09-21",
 						gender: "default",
 						country: "default",
-						address : ""
+						address: ""
 					};
 
 					const name = result.user.displayName;
@@ -464,7 +464,7 @@ export default {
 					});
 
 					// Kullanıcı bilgilerini Vuex'ta güncelleyin
-					store.commit('SET_USER', { ...auth.currentUser, name, surname, gender, date, job, country,address });
+					store.commit('SET_USER', { ...auth.currentUser, name, surname, gender, date, job, country, address });
 
 
 					console.log('Google ile giriş yapıldı ve kullanıcı bilgileri Firestore\'a eklendi.');
@@ -490,7 +490,7 @@ export default {
 		const handleGoogle2 = async () => {
 			try {
 				const provider = new GoogleAuthProvider();
-				await signInWithPopup(auth, provider);
+				const result = await signInWithPopup(auth, provider);
 				const uid = auth.currentUser.uid;
 				const db = getFirestore();
 				if (auth.currentUser) {
@@ -513,8 +513,33 @@ export default {
 						const address = userData.address;
 
 						// Kullanıcı adını Vuex store'a ekleyebilirsiniz
-						store.commit('SET_USER', { ...auth.currentUser, name, surname, gender, date, job, country,address });
+						store.commit('SET_USER', { ...auth.currentUser, name, surname, gender, date, job, country, address });
 					} else {
+						const googleUser = {
+							name: result.user.displayName,
+							surname: "default",
+							job: "default",
+							date: "1999-09-21",
+							gender: "default",
+							country: "default",
+							address: ""
+						};
+
+						const name = result.user.displayName;
+						const surname = "default";
+						const gender = "default";
+						const date = "1999-09-21";
+						const job = "default";
+						const country = "default";
+						const address = "";
+
+						const userDocRef = doc(collection(getFirestore(), 'users'), auth.currentUser.uid);
+						await setDoc(userDocRef, {
+							...googleUser,
+						});
+
+						// Kullanıcı bilgilerini Vuex'ta güncelleyin
+						store.commit('SET_USER', { ...auth.currentUser, name, surname, gender, date, job, country, address });
 						console.error('Kullanıcı belgesi bulunamadı.');
 					}
 					console.log('Google ile giriş yapıldı ve kullanıcı bilgileri Firestore\'a eklendi.');
@@ -669,6 +694,8 @@ export default {
 </script>
 
 <style>
+
+
 .input-widt {
 	width: 110px;
 }

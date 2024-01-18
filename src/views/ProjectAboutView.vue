@@ -37,6 +37,30 @@
             </div>
         </div>
 
+        <div class="project-about-mains interface">
+            <div><img src="../assets/login.jpeg" alt=""></div>
+            <div>
+                <h4>Login and Register:</h4>
+                <p>In this section, we added the login and sign up functions, but we have not yet added the direct sign up and log in function with Google or similar accounts.</p>
+            </div>
+        </div>
+
+        <div class="project-about-mains interface">
+            <div><img src="../assets/login.jpeg" alt=""></div>
+            <div>
+                <h4>Login and Register:</h4>
+                <p>In this section, we added the login and sign up functions, but we have not yet added the direct sign up and log in function with Google or similar accounts.</p>
+            </div>
+        </div>
+
+        <div class="project-about-mains interface">
+            <div><img src="../assets/login.jpeg" alt=""></div>
+            <div>
+                <h4>Login and Register:</h4>
+                <p>In this section, we added the login and sign up functions, but we have not yet added the direct sign up and log in function with Google or similar accounts.</p>
+            </div>
+        </div>
+
         
         <!-- <div class="project-about-mains interface">
             <div><img src="" alt=""></div>
@@ -81,7 +105,7 @@
 <style>
 
     .project-about {
-        height: 2070px;
+        height: 3770px;
         display: flex;
         flex-direction: column;
         justify-content: center;
