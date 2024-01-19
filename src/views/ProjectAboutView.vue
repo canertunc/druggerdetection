@@ -21,13 +21,13 @@
             <h3>The Usage of the Application</h3>
             <p>The application is remarkably simple and user-friendly. It will be developed to be compatible with the Android platform and can be downloaded to mobile devices through the respective platform's application store. Additionally, compatibility with the iOS platform will be introduced in the near future. Users will have access to usage information and privacy policies during the application installation process.</p>
         </div>
-        <div class="project-about-mains interface">
+        <!-- <div class="project-about-mains interface">
             <div><img src="../assets/home.jpeg" alt=""></div>
             <div>
                 <h4>Home:</h4>
                 <p>We have not yet completed our home page. But we have interfaced the basic functions.</p>
             </div>
-        </div>
+        </div> -->
 
 
 
@@ -75,7 +75,7 @@
 <style>
 
     .project-about {
-        height: 1490px;
+        height: 980px;
         display: flex;
         flex-direction: column;
         justify-content: center;
